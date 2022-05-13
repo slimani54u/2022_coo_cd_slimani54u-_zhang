@@ -15,5 +15,6 @@ public class ChargeurMagasinTest {
         assertEquals("nb Cds: 0",magasin.toString(),"le Contenu different");
     }
 
-    @
+    @Test
+    public void test2_chargerMagasin_
 }
