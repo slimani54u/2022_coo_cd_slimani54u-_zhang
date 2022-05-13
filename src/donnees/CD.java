@@ -97,5 +97,17 @@ public class CD {
 		return (resultat);
 	}
 
-	// TODO 
+	public String getNomCD() {
+		return nomCD;
+	}
+
+	public boolean etreAvantAlbum(CD cd){
+		int i = nomCD.compareTo(cd.getNomCD());
+		if(i < 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }
