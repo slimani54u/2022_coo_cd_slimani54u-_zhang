@@ -110,4 +110,14 @@ public class CD {
 		}
 	}
 
+
+	//Correction Prof
+	public int comparerArtiste(CD cd){
+		String nomArtiste = this.nomArtiste;
+		String nomCD = cd.nomArtiste;
+
+		return nomArtiste.compareTo(nomCD);
+	}
+
+
 }

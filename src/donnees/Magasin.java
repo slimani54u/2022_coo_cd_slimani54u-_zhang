@@ -94,6 +94,31 @@ public class Magasin {
 		}
 	}
 
+	//Correction Prof
+	public void trierCDArtiste(){
+		for(int i = 0; i < this.listeCds.size();i++){
+
+			CD min = this.listeCds.get(i);
+			int indiceMin = i;
+
+			for(int j = i + 1 ; j < this.listeCds.size();j++){
+				CD cdj = this.listeCds.get(j);
+				if(min.comparerArtiste(cdj)>0){
+					min = cdj;
+					indiceMin = j;
+				}
+			}
+
+			CD temp = min;
+			this.listeCds.set(indiceMin,this.listeCds.get(i));
+			this.listeCds.set(i,min);
+
+		}
+
+
+
+
+	}
 
 
 
