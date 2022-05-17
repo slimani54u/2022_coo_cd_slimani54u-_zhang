@@ -62,4 +62,8 @@ public class InfoPiste {
 			sSecondes = "0" + secondes;
 		return ("" + min + ":" + sSecondes);
 	}
+	public boolean EtreAvantInfoPiste (InfoPiste ip){
+		return (this.nomPiste.compareTo(ip.nomPiste) < 0);
+	}
+
 }

@@ -131,7 +131,25 @@ public class CD {
 		return (this.nomArtiste.compareTo(cd.nomArtiste) < 0);
 	}
 
+	public void trierPiste() {
+		// tri par selection
+		int nbCDs = this.pistes.size();
+		for (int i = 0; i < nbCDs; i++) {
+			InfoPiste cdSelectionne = this.pistes.get(i);
 
+			//selectionne plus petit
+			int indiceSelection = i;
+			for (int j = i + 1; j < nbCDs; j++) {
+				InfoPiste infoPiste = pistes.get(j);
+				if (infoPiste.EtreAvantInfoPiste(cdSelectionne)) {
+					indiceSelection = j;
+					cdSelectionne = infoPiste;
+				}
+			}
+			pistes.set(indiceSelection, pistes.get(i));
+			pistes.set(i, cdSelectionne);
+		}
+	}
 
 
 }

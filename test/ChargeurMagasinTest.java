@@ -58,4 +58,16 @@ public class ChargeurMagasinTest {
         System.out.println(cd_1.etreAvantAlbum(cd_2));
 
     }
+    @Test
+    public void test1(){
+        CD cd = new CD("yasser","a");
+        cd.ajouterPiste(new InfoPiste("y",45));
+        cd.ajouterPiste(new InfoPiste("z",65));
+        cd.ajouterPiste(new InfoPiste("p",45));
+        cd.ajouterPiste(new InfoPiste("a",45));
+        cd.trierPiste();
+        System.out.println(cd);
+
+
+    }
 }
