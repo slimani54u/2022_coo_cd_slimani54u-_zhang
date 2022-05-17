@@ -68,58 +68,53 @@ public class Magasin {
 		return(res);
 	}
 
-	// TODO  ajouter une methode de tri
-	public void tri(){
-		int nbCDs = listeCds.size();
 
-		for(int i= 0;i < nbCDs - 1;i++){
-			CD cd_i = listeCds.get(i);
+
+	/**
+	 * permet de trier par nom d'artistes croissant
+	 */
+	public void trierAriste() {
+		// tri par selection
+		int nbCDs = this.listeCds.size();
+		for (int i = 0; i < nbCDs; i++) {
+			CD cdSelectionne = this.listeCds.get(i);
+
+			//Selectionne le plus petit
 			int indiceSelection = i;
-			CD cdSelectionne = cd_i;
-
-			for(int j = i + 1; j < nbCDs ; j ++){
-				CD cd_j = listeCds.get(j);
-
-				boolean estAvant = cd_j.etreAvantAlbum(cdSelectionne);
-
-				if(estAvant){
+			for (int j = i + 1; j < nbCDs; j++) {
+				CD cdTemp = listeCds.get(j);
+				if (cdTemp.etreAvantArtiste(cdSelectionne)) {
 					indiceSelection = j;
-					cdSelectionne = cd_j;
+					cdSelectionne = cdTemp;
 				}
 			}
-
-			listeCds.set(indiceSelection,cd_i);
-			listeCds.set(i,cdSelectionne);
-
+			listeCds.set(indiceSelection, listeCds.get(i));
+			listeCds.set(i, cdSelectionne);
 		}
 	}
 
-	//Correction Prof
-	public void trierCDArtiste(){
-		for(int i = 0; i < this.listeCds.size();i++){
+	/**
+	 * permet de trier par nom d'album croissant
+	 */
+	public void trierAlbum() {
+		// tri par selection
+		int nbCDs = this.listeCds.size();
+		for (int i = 0; i < nbCDs; i++) {
+			CD cdSelectionne = this.listeCds.get(i);
 
-			CD min = this.listeCds.get(i);
-			int indiceMin = i;
-
-			for(int j = i + 1 ; j < this.listeCds.size();j++){
-				CD cdj = this.listeCds.get(j);
-				if(min.comparerArtiste(cdj)>0){
-					min = cdj;
-					indiceMin = j;
+			//selectionne plus petit
+			int indiceSelection = i;
+			for (int j = i + 1; j < nbCDs; j++) {
+				CD cdTemp = listeCds.get(j);
+				if (cdTemp.etreAvantAlbum(cdSelectionne)) {
+					indiceSelection = j;
+					cdSelectionne = cdTemp;
 				}
 			}
-
-			CD temp = min;
-			this.listeCds.set(indiceMin,this.listeCds.get(i));
-			this.listeCds.set(i,min);
-
+			listeCds.set(indiceSelection, listeCds.get(i));
+			listeCds.set(i, cdSelectionne);
 		}
-
-
-
-
 	}
-
 
 
 

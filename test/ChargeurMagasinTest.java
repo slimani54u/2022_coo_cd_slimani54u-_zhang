@@ -30,10 +30,10 @@ public class ChargeurMagasinTest {
     @Test
     public void test(){
         CD cd_1 = new CD("Zhang","a");
-        CD cd_2 = new CD("Zhang","b");
-        CD cd_3 = new CD("Zhang","c");
-        CD cd_4 = new CD("Zhang","d");
-        CD cd_5 = new CD("Zhang","e");
+        CD cd_2 = new CD("Ahang","b");
+        CD cd_3 = new CD("Dhang","c");
+        CD cd_4 = new CD("Ehang","d");
+        CD cd_5 = new CD("Phang","e");
 
         Magasin magasin = new Magasin();
         magasin.ajouteCd(cd_5);
@@ -41,7 +41,7 @@ public class ChargeurMagasinTest {
         magasin.ajouteCd(cd_2);
         magasin.ajouteCd(cd_4);
         magasin.ajouteCd(cd_1);
-        magasin.tri();
+        magasin.trierAriste();
 
         System.out.println(magasin);
 
