@@ -96,7 +96,7 @@ public class Magasin {
 	/**
 	 * permet de trier par nom d'album croissant
 	 */
-	public void trierAlbum() {
+	public void trier(Comparateur comparateur) {
 		// tri par selection
 		int nbCDs = this.listeCds.size();
 		for (int i = 0; i < nbCDs; i++) {
@@ -106,7 +106,7 @@ public class Magasin {
 			int indiceSelection = i;
 			for (int j = i + 1; j < nbCDs; j++) {
 				CD cdTemp = listeCds.get(j);
-				if (cdTemp.etreAvantAlbum(cdSelectionne)) {
+				if (comparateur.EtreAvant(cdTemp,cdSelectionne)) {
 					indiceSelection = j;
 					cdSelectionne = cdTemp;
 				}
